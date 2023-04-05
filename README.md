@@ -1,10 +1,13 @@
 ### Base para usar nos seus resources
 
 
-<!-- Languages -->
-<h2>As linguagens de programação dessa base</h2>
+<!-- Programming languages -->
+<h2>Minhas linguagens de programação</h2>
 <a href="https://github.com/Anant-mishra1729#gh-light-mode-only">
 <img src="https://skillicons.dev/icons?i=lua,git&theme=light&perline=8" />
+</a>
+<a href="https://github.com/Anant-mishra1729#gh-dark-mode-only">
+<img src="https://skillicons.dev/icons?i=lua" />
 </a>
 
 
