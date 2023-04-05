@@ -1,8 +1,7 @@
-### Base para usar nos seus resources
 
 
-<!-- Programming languages -->
-<h2>Linguagens Dessa Base</h2>
+<!-- Programming Languages -->
+<h2>Languages From This Base</h2>
 <a href="https://github.com/Anant-mishra1729#gh-light-mode-only">
 <img src="https://skillicons.dev/icons?i=lua,git&theme=light&perline=8" />
 </a>
