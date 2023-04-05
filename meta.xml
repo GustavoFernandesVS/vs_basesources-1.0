@@ -1,0 +1,27 @@
+<meta>
+
+ <!-- Managers/Assistants -->
+   <script src = 'assets/src/manager-configuration.lua' type = 'shared' cache = 'true'/>
+
+   <script src = 'assets/src/manager-client.lua' type = 'client' cache = 'true'/>
+   <script src = 'assets/src/manager-server.lua' type = 'server' cache = 'true'/>
+
+   <script src = 'assets/src/assistant-fuluse.lua' type = 'client' cache = 'true'/>
+   <script src = 'assets/src/assistang-license.lua' type = 'client' cache = 'true'/>
+
+ <!-- Art/Icons -->
+
+
+  <!-- Fonts -->
+  
+   <file src = 'assets/fonts/interbold.ttf'/>
+   <file src = 'assets/fonts/intermedium.ttf'/>
+   <file src = 'assets/fonts/intersemibold.ttf'/>
+   <file src = 'assets/fonts/interthin.ttf'/>
+   <file src = 'assets/fonts/interregular.ttf'/>
+   <file src = 'assets/fonts/interlight.ttf'/>
+   <file src = 'assets/fonts/interextralight.ttf'/>
+   <file src = 'assets/fonts/interextrabold.ttf'/>
+   <file src = 'assets/fonts/interblack.ttf'/>
+
+</meta>
