@@ -13,11 +13,8 @@ local fonts = {
 local function managerDraw ()
     if (Opening == true) then Alpha = interpolateBetween(0, 0, 0, 255, 0, 0, ((getTickCount() - tick) / 900), 'Linear') else Alpha = interpolateBetween(255, 0, 0, 0, 0, 0, ((getTickCount() - tick) / 900), 'Linear') end
     
-    dxDrawRoundedRectangle(341, 179, 1237, 722, 40, tocolor(22, 22, 22, Alpha))
-    dxDrawRoundedRectangle(385, 390, 72, 300, 20, (isMouseInPosition(385, 390, 72, 300) and colorAnimation('retangulo', 1000, 200, 50, 50, 255) or colorAnimation('retangulo', 1000, 28, 28, 28, 255)))
-
+    drawSvgRectangle(341, 179, 1237, 722, 40, tocolor(22, 22, 22, Alpha), '#FF0000', 0, false)
 end
---< On/Off Draw >--
 
     bindKey(configuration['GeneralSettings']['openKey'], 'down',
     function ()
