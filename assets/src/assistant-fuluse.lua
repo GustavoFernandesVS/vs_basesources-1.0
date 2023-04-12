@@ -83,26 +83,28 @@ function drawButton(x, y, w, h, text, color, next_color, utils, postGUI)
 	end
 end
 
-svgsRectangle = {};
-function dxDrawRoundedRectangle(x, y, w, h, radius, color, post)
-    if not svgsRectangle[radius] then
-        svgsRectangle[radius] = {}
+local buttons = {}
+
+function drawSvgRectangle(x, y, width, height, radius, color, colorStroke, sizeStroke, postGUI)
+    colorStroke = tostring(colorStroke)
+    sizeStroke = tostring(sizeStroke)
+
+    if (not buttons[radius]) then
+        local raw = string.format([[
+            <svg width='%s' height='%s' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                <mask id='path_inside' fill='#FFFFFF' >
+                    <rect width='%s' height='%s' rx='%s' />
+                </mask>
+                <rect opacity='1' width='%s' height='%s' rx='%s' fill='#FFFFFF' stroke='%s' stroke-width='%s' mask='url(#path_inside)'/>
+            </svg>
+        ]], width, height, width, height, radius, width, height, radius, colorStroke, sizeStroke)
+        buttons[radius] = svgCreate(width, height, raw)
     end
-    if not svgsRectangle[radius][w] then
-        svgsRectangle[radius][w] = {}
-    end
-    if not svgsRectangle[radius][w][h] then
-        local path = string.format([[
-        <svg width="%s" height="%s" viewBox="0 0 %s %s" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect opacity="1" width="%s" height="%s" rx="%s" fill="#FFFFFF"/>
-        </svg>
-        ]], w, h, w, h, w, h, radius)
-        svgsRectangle[radius][w][h] = svgCreate(w, h, path)
-    end
-    if svgsRectangle[radius][w][h] then
-        dxDrawImage(x, y, w, h, svgsRectangle[radius][w][h], 0, 0, 0, color, post or false)
+    if (buttons[radius]) then -- Se já existir um botão com o mesmo Radius, reaproveitaremos o mesmo, para não criar outro.
+        dxDrawImage(x, y, width, height, buttons[radius], 0, 0, 0, color, postGUI)
     end
 end
+
 
 function getPositionFromElementOffset(element, offX, offY, offZ) 
     local m = getElementMatrix(element) 
